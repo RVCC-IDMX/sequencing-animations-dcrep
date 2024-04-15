@@ -33,3 +33,13 @@ alice1.animate(aliceTumbling, aliceTiming).finished.then(
   (result) => alice2.animate(aliceTumbling, aliceTiming).finished.then(
   (result) => alice3.animate(aliceTumbling, aliceTiming)));
 */
+
+// Async-Await version:
+async function animateAll() {
+  await alice1.animate(aliceTumbling, aliceTiming).finished;
+  await alice2.animate(aliceTumbling, aliceTiming).finished;
+  await alice3.animate(aliceTumbling, aliceTiming).finished;
+}
+
+animateAll();
+console.log("Running animations");
